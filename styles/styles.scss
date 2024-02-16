@@ -1,0 +1,179 @@
+@import './resets', './variables';
+
+body {
+    font-family: "Source Sans 3", sans-serif;
+    color: $primary-clr;
+    background: $secondary-clr-pale;
+    font-size: 1rem;
+}
+
+/* --- Typography --- */
+.main-heading {
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin: .5em 0;
+}
+
+.text {
+    font-weight: 300;
+    max-width: 800px;
+    margin-bottom: 1em;
+}
+
+.date {
+    font-size: .9em;
+}
+
+.small-heading {
+    margin: 1em 0;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-clr;
+}
+
+/* --- nav --- */
+
+.nav {  
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+    margin-bottom: 1.5em;
+    font-size: 1.2rem;
+    
+    .logo a {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+    }
+
+    ul {
+        display: flex;
+        gap: 1em;
+        list-style: none;
+        text-transform: uppercase;
+    }
+}
+
+.text-sections {
+    padding: 0 2em;
+    
+    .img {
+        width: 100%;
+        max-width: 800px;
+    }
+}
+.hero {
+    background: $primary-clr url("../img/cozy.jpg");
+    background-size: cover;
+    background-position-y: center;
+    color: $secondary-clr;
+    padding: 2em;
+    line-height: 1.3;
+    text-shadow: 2px invert($primary-clr);
+    margin-top: -2em;
+    
+
+    .date {
+        margin-top: 4em;
+        font-weight: 200;
+        text-transform: uppercase;
+        font-size: .8rem;
+    }
+
+    .text {
+        margin-bottom: 0;
+    }
+
+}
+
+.about-section {
+    margin-bottom: 2em;
+
+    .profile-pic {
+        width: 200px;
+        border-radius: 50%;
+    }
+}
+
+.blog-posts {
+    display: grid;
+
+    h3 {
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    .blog-post {
+        padding: 1em 1.5em;
+        
+    
+        img{
+            width: 100%;
+            border-radius: 5px; 
+        }
+        .date {
+            margin: .5em 0;
+        }
+        
+    }
+    
+    .view-more-btn {
+        background: none;
+        border: none;
+        font-size: 1em;
+        font-weight: 700;
+        text-decoration: underline;
+        margin-bottom: 2em;
+    }
+}
+
+
+.footer {
+    background: $primary-clr;
+    color: $secondary-clr-pale;
+    padding: 2.5em;
+    text-align: center;
+
+    .copyright {
+        font-size: .8rem;
+        font-weight: 100;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 800px) {
+
+    .hero {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .text-sections {
+        display: grid;
+        justify-items: center;
+    }
+
+    .blog-posts {
+        max-width: 1280px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        h3, .view-more-btn{
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .blog-posts {
+        margin: 0 auto;
+    }
+}
